@@ -1,4 +1,4 @@
-# PacketFix
+# PacketFix （Release将在不久后上传）
 A mod that fills the gap between 1.8.9 and 1.12.2 (original price 15 CNY)
 
 禁止搭配LabyMod使用  
