@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id "me.yuugiri.fluiditygradle"
+}
+
+group 'dev.sora.packetfix'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation MinecraftDependencyKt.minecraftDep(project)
+    implementation fileTree(include: ["*.jar"], dir: "libs")
+}
+
+jar {
+    manifest.attributes(
+            "FMLCorePlugin": "dev.sora.packetfix.FMLLoadingPlugin",
+            "FMLCorePluginContainsFMLMod": true,
+            "ForceLoadAsMod": true,
+            "ModSide": "CLIENT",
+    )
+}
+
+reobfJarWithStrip.dependsOn(jar)

@@ -1,0 +1,27 @@
+pluginManagement {
+    repositories {
+        mavenLocal()
+        maven {
+            url = "https://mccheatz.github.io/maven_repo/"
+            content {
+                includeGroupByRegex "me\\.yuugiri.*"
+                includeGroupByRegex "org\\.jetbrains\\.compose.*"
+                includeGroupByRegex "org\\.jetbrains\\.skiko.*"
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    resolutionStrategy {
+        eachPlugin {
+            switch (requested.id.id) {
+                case "me.yuugiri.fluiditygradle":
+                    useModule("me.yuugiri.fluiditygradle:FluidityGradle:1.0.0")
+                    break
+            }
+        }
+    }
+}
+
+rootProject.name = 'packetfix'
+
